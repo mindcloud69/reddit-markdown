@@ -47,7 +47,40 @@ docker build -t reddit-markdown .
 docker run -it --rm --name reddit-markdown-container -v $PWD:/app reddit-markdown
 ```
 
+For fellow powershell users: this has to be changed slightly to:
+`docker run -it --rm --name reddit-markdown-container -v ${PWD}:/app reddit-markdown`
+
 4. Follow the instructions of the script as normal (enter URL, directory, etc.)
+### Output
+With the above instructions, this is the output I get when running the demo:
+
+```
+docker run -it --rm --name reddit-markdown-container -v ${PWD}:/app reddit-markdown
+
+✏️ If you have a link to the Reddit post you want to save, enter/paste it below. Separate multiple links with commas.
+✏️ If you need a demo, enter "demo".
+✏️ If you want a surprise, enter "surprise".
+✏️ If you want to save currently trending posts in a subreddit, enter "r/[SUBREDDIT_NAME]", e.g. "r/pcmasterrace".
+✏️ If you have a multireddit (i.e. collection of multiple subreddits) defined in `settings.json`, enter its name, e.g. "m/stocks".
+demo
+
+=> Enter a full path to save the post(s) to. Hit Enter/Return for current directory, which is /app.
+
+🔃Demo mode enabled. Using demo link...
+🔃Processing post 1 of 1...
+https://www.reddit.com/r/pcmasterrace/comments/101kjyq/my_dad_has_been_playing_civilization_almost_daily/
+
+🔃Downloading post data...
+🔃Saving...
+✅Reddit post saved! Check it out at /app/pcmasterrace/my_dad_has_been_playing_civilization_almost_daily.md.
+
+---
+Thanks for using this script!
+Something's not working as expected? Have a feature you'd like to see added? Let me know by opening an issue on GitHub at https://github.com/chauduyphanvu/reddit-markdown/issues.
+```
+
+![image](https://github.com/mindcloud69/reddit-markdown/assets/3201188/a7a198ec-30d1-441b-b8ad-ff6730c7019b)
+
 
 ## Command-line Arguments
 Starting with the 1.7.0 release, command-line arguments are supported to facilitate automation and integration with other programs (see [Automation](#automation) for details)
